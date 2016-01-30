@@ -22,6 +22,7 @@ Lazer Team the Game (Theme: Ritual)
 		- 2d pixel art
 		- enemy designs
 		- sprite animations
+			- can break up character parts and animate them in mechanim
 		- backdrop
 			- high school football stadium in a domed energy shield
 			- spaceship hovering overhead
