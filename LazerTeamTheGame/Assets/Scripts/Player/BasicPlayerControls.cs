@@ -6,7 +6,7 @@ namespace Assets.Scripts.Player
     {
         public Player player;
 
-        private void Update()
+        private void FixedUpdate()
         {
             // Handle movement
             if (Input.GetKey(KeyCode.D))
@@ -42,6 +42,24 @@ namespace Assets.Scripts.Player
             if (Input.GetKey(KeyCode.Keypad4))
             {
                 player.Shield();
+            }
+
+            // Equipment release
+            if (Input.GetKeyUp(KeyCode.Keypad2))
+            {
+                player.BootsRelease();
+            }
+            if (Input.GetKeyUp(KeyCode.Keypad8))
+            {
+                player.HelmetRelease();
+            }
+            if (Input.GetKeyUp(KeyCode.Keypad6))
+            {
+                player.GunRelease();
+            }
+            if (Input.GetKeyUp(KeyCode.Keypad4))
+            {
+                player.ShieldRelease();
             }
         }
     }

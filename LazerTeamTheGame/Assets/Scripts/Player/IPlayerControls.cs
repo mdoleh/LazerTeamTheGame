@@ -2,13 +2,13 @@
 {
     public interface IPlayerControls
     {
-        bool MoveRight();
-        bool MoveLeft();
-        bool Jump();
-        bool Crouch();
-        bool Gun();
-        bool Shield();
-        bool Boots();
-        bool Helmet();
+        void MoveRight();
+        void MoveLeft();
+        void Jump();
+        void Crouch();
+        void Gun();
+        void Shield();
+        void Boots();
+        void Helmet();
     }
 }

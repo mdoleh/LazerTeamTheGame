@@ -5,52 +5,81 @@ namespace Assets.Scripts.Player
 {
     public class Player : MonoBehaviour, IPlayerControls
     {
-        public bool MoveRight()
+        public ComboPlayerControls comboControls;
+        [HideInInspector] public bool isGrounded = true;
+
+        private Rigidbody2D rigidbody;
+        private Transform groundCheck;
+
+        private void Start()
         {
-            Debug.Log("Move Right");
-            return true;
+            rigidbody = GetComponent<Rigidbody2D>();
+            groundCheck = transform.Find("groundCheck");
         }
 
-        public bool MoveLeft()
+        private void Update()
         {
-            Debug.Log("Move Left");
-            return true;
+            isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         }
 
-        public bool Jump()
+        public void MoveRight()
         {
-            Debug.Log("Jump");
-            return true;
+            rigidbody.AddForce(Vector2.right * 300f * rigidbody.mass);
         }
 
-        public bool Crouch()
+        public void MoveLeft()
         {
-            Debug.Log("Crouch");
-            return true;
+            rigidbody.AddForce(Vector2.left * 300f * rigidbody.mass);
         }
 
-        public bool Gun()
+        public void Jump()
         {
-            Debug.Log("Gun");
-            return true;
+            if (isGrounded) rigidbody.AddForce(Vector2.up * 3000f * rigidbody.mass);
         }
 
-        public bool Shield()
+        public void Crouch()
         {
-            Debug.Log("Shield");
-            return true;
+            // shrink collision box vertically
         }
 
-        public bool Boots()
+        public void Gun()
         {
-            Debug.Log("Boots");
-            return true;
+            comboControls.Gun = true;
         }
 
-        public bool Helmet()
+        public void Shield()
         {
-            Debug.Log("Helmet");
-            return true;
+            comboControls.Shield = true;
+        }
+
+        public void Boots()
+        {
+            comboControls.Boots = true;
+        }
+
+        public void Helmet()
+        {
+            comboControls.Helmet = true;
+        }
+
+        public void BootsRelease()
+        {
+            comboControls.Boots = false;
+        }
+
+        public void HelmetRelease()
+        {
+            comboControls.Helmet = false;
+        }
+
+        public void GunRelease()
+        {
+            comboControls.Gun = false;
+        }
+
+        public void ShieldRelease()
+        {
+            comboControls.Shield = false;
         }
     }
 }
