@@ -3,13 +3,14 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
-    public class Player : MonoBehaviour, IPlayerControls
+    public class Player : Character, IPlayerControls
     {
         public ComboPlayerControls comboControls;
         [HideInInspector] public bool isGrounded = true;
 
         private Rigidbody2D rigidbody;
         private Transform groundCheck;
+        public bool facingRight = true;
 
         private void Start()
         {
@@ -25,11 +26,13 @@ namespace Assets.Scripts.Player
         public void MoveRight()
         {
             rigidbody.AddForce(Vector2.right * 300f * rigidbody.mass);
+            if (!facingRight) Flip();
         }
 
         public void MoveLeft()
         {
             rigidbody.AddForce(Vector2.left * 300f * rigidbody.mass);
+            if (facingRight) Flip();
         }
 
         public void Jump()
@@ -80,6 +83,17 @@ namespace Assets.Scripts.Player
         public void ShieldRelease()
         {
             comboControls.Shield = false;
+        }
+
+        private void Flip()
+        {
+            // Switch the way the player is labelled as facing.
+            facingRight = !facingRight;
+
+            // Multiply the player's x local scale by -1.
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
         }
     }
 }

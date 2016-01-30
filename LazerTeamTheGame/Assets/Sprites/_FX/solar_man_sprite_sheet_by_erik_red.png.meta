@@ -1,0 +1,652 @@
+fileFormatVersion: 2
+guid: 334fe906184667147af19aa6ee90e39c
+timeCreated: 1454180901
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: solar_man_sprite_sheet_by_erik_red_0
+    21300002: solar_man_sprite_sheet_by_erik_red_1
+    21300004: solar_man_sprite_sheet_by_erik_red_2
+    21300006: solar_man_sprite_sheet_by_erik_red_3
+    21300008: solar_man_sprite_sheet_by_erik_red_4
+    21300010: solar_man_sprite_sheet_by_erik_red_5
+    21300012: solar_man_sprite_sheet_by_erik_red_6
+    21300014: solar_man_sprite_sheet_by_erik_red_7
+    21300016: solar_man_sprite_sheet_by_erik_red_8
+    21300018: solar_man_sprite_sheet_by_erik_red_9
+    21300020: solar_man_sprite_sheet_by_erik_red_10
+    21300022: solar_man_sprite_sheet_by_erik_red_11
+    21300024: solar_man_sprite_sheet_by_erik_red_12
+    21300026: solar_man_sprite_sheet_by_erik_red_13
+    21300028: solar_man_sprite_sheet_by_erik_red_14
+    21300030: solar_man_sprite_sheet_by_erik_red_15
+    21300032: solar_man_sprite_sheet_by_erik_red_16
+    21300034: solar_man_sprite_sheet_by_erik_red_17
+    21300036: solar_man_sprite_sheet_by_erik_red_18
+    21300038: solar_man_sprite_sheet_by_erik_red_19
+    21300040: solar_man_sprite_sheet_by_erik_red_20
+    21300042: solar_man_sprite_sheet_by_erik_red_21
+    21300044: solar_man_sprite_sheet_by_erik_red_22
+    21300046: solar_man_sprite_sheet_by_erik_red_23
+    21300048: solar_man_sprite_sheet_by_erik_red_24
+    21300050: solar_man_sprite_sheet_by_erik_red_25
+    21300052: solar_man_sprite_sheet_by_erik_red_26
+    21300054: solar_man_sprite_sheet_by_erik_red_27
+    21300056: solar_man_sprite_sheet_by_erik_red_28
+    21300058: solar_man_sprite_sheet_by_erik_red_29
+    21300060: solar_man_sprite_sheet_by_erik_red_30
+    21300062: solar_man_sprite_sheet_by_erik_red_31
+    21300064: solar_man_sprite_sheet_by_erik_red_32
+    21300066: solar_man_sprite_sheet_by_erik_red_33
+    21300068: solar_man_sprite_sheet_by_erik_red_34
+    21300070: solar_man_sprite_sheet_by_erik_red_35
+    21300072: solar_man_sprite_sheet_by_erik_red_36
+    21300074: solar_man_sprite_sheet_by_erik_red_37
+    21300076: solar_man_sprite_sheet_by_erik_red_38
+    21300078: solar_man_sprite_sheet_by_erik_red_39
+    21300080: solar_man_sprite_sheet_by_erik_red_40
+    21300082: solar_man_sprite_sheet_by_erik_red_41
+    21300084: solar_man_sprite_sheet_by_erik_red_42
+    21300086: solar_man_sprite_sheet_by_erik_red_43
+    21300088: solar_man_sprite_sheet_by_erik_red_44
+    21300090: solar_man_sprite_sheet_by_erik_red_45
+    21300092: solar_man_sprite_sheet_by_erik_red_46
+    21300094: solar_man_sprite_sheet_by_erik_red_47
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: solar_man_sprite_sheet_by_erik_red_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 237
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 237
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 237
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 237
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 237
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 237
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_6
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 237
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_7
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 237
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_8
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 237
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_9
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 243
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_10
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 241
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_11
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 202
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_12
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 202
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_13
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 202
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_14
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 202
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_15
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 202
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_16
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 202
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_17
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 202
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_18
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 202
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_19
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 207
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_20
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 201
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_21
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 201
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_22
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 167
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_23
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 155
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_24
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 168
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_25
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 171
+        width: 49
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_26
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 174
+        width: 43
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_27
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 149
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_28
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 150
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_29
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 143
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_30
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 143
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_31
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 154
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_32
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 146
+        width: 5
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_33
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 143
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_34
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 143
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_35
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 143
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_36
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 143
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_37
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 143
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_38
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 143
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_39
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 143
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_40
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 97
+        width: 233
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_41
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 89
+        width: 57
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.5, y: -23.5}
+        - {x: 28.5, y: -23.5}
+        - {x: 28.5, y: 23.5}
+        - {x: -28.5, y: 23.5}
+    - name: solar_man_sprite_sheet_by_erik_red_42
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 67
+        width: 233
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_43
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 45
+        width: 51
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 20.5}
+        - {x: -3.5, y: 20.5}
+        - {x: -17.5, y: 7.5}
+        - {x: -25.5, y: -16.5}
+        - {x: -25.5, y: -20.5}
+        - {x: 25.5, y: -20.5}
+        - {x: 25.5, y: -11.5}
+        - {x: 24.5, y: -9.5}
+    - name: solar_man_sprite_sheet_by_erik_red_44
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 43
+        width: 233
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_45
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 17
+        width: 233
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: solar_man_sprite_sheet_by_erik_red_46
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 7
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 17.5}
+        - {x: -18.5, y: 15.5}
+        - {x: -18.5, y: -17.5}
+        - {x: 9.5, y: -17.5}
+        - {x: 18.5, y: -8.5}
+        - {x: 18.5, y: 11.5}
+        - {x: 13.5, y: 17.5}
+    - name: solar_man_sprite_sheet_by_erik_red_47
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 7
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
