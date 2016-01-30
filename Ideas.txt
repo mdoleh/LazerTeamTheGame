@@ -1,0 +1,40 @@
+Lazer Team the Game (Theme: Ritual)
+	- play as the champion of Earth
+	- Scott Pilgrim style animation and graphics
+	- tournament style game
+		- face off against the champions of other worlds
+			- maybe each can have their own strategy to defeat
+		- suit of power
+			- super speed
+			- laser gun
+			- energy shield
+			- helmet
+			- potential combination of suit elements
+				- speed + shield - super dash into enemies
+				- shield + gun - dark matter ray
+			- controls
+				- WASD or arrows to move
+				- 4 buttons, one for each suit piece
+					- holding one down then pressing another combines the elements
+					- ex: hold shield then gun charges dark matter ray
+					- ex: hold dash then shield super dash into enemies
+	- needs
+		- 2d pixel art
+		- enemy designs
+		- sprite animations
+		- backdrop
+			- high school football stadium in a domed energy shield
+			- spaceship hovering overhead
+			- holographic aliens in the stands
+		- sound effects
+			- laser shoot
+			- energy shield forming
+			- dashing
+			- dark matter ray
+			- jumping?
+		- music
+			- fights
+				- upbeat, fast paced, kind of like a chase scene
+				- looping
+			- title
+				- fast, upbeat, different from fights
