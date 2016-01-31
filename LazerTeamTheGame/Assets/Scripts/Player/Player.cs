@@ -13,7 +13,7 @@ namespace Assets.Scripts.Player
         [HideInInspector] public bool isGrounded = true;
 
         private Rigidbody2D rigidbody;
-        private Transform groundCheck;
+        public Transform groundCheck;
         public bool facingRight = true;
         public Transform laser;
         public GameObject laserShot;
@@ -25,10 +25,12 @@ namespace Assets.Scripts.Player
         private bool canRunFaster = true;
         private bool canUseHelmet = true;
 
+        private Animator anim;
+
         private void Start()
         {
+            anim = GetComponent<Animator>();
             rigidbody = GetComponent<Rigidbody2D>();
-            groundCheck = transform.Find("groundCheck");
             originalSpeed = moveSpeed;
         }
 
@@ -37,21 +39,37 @@ namespace Assets.Scripts.Player
             isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         }
 
+        public void Idle()
+        {
+            anim.SetBool("Walk", false);
+            anim.SetTrigger("Idle");
+        }
+
         public void MoveRight()
         {
+            anim.SetBool("Walk", true);
             rigidbody.AddForce(Vector2.right * moveSpeed * rigidbody.mass);
             if (!facingRight) Flip();
         }
 
         public void MoveLeft()
         {
+            anim.SetBool("Walk", true);
             rigidbody.AddForce(Vector2.left * moveSpeed * rigidbody.mass);
             if (facingRight) Flip();
         }
 
         public void Jump()
         {
-            if (isGrounded) rigidbody.AddForce(Vector2.up * 2000f * rigidbody.mass * (comboControls.Boots ? 2f : 1f));
+            if (isGrounded)
+            {
+                anim.SetBool("Jump", true);
+                rigidbody.AddForce(Vector2.up * 2000f * rigidbody.mass * (comboControls.Boots ? 2f : 1f));
+            }
+            else
+            {
+                anim.SetBool("Jump", false);
+            }
         }
 
         public void Crouch()
@@ -61,6 +79,7 @@ namespace Assets.Scripts.Player
 
         public void Gun()
         {
+            anim.SetBool("Shoot", true);
             comboControls.Gun = true;
             if (!canShoot || comboControls.Shield || comboControls.Helmet) return;
             var newShot = Instantiate(laserShot);
@@ -103,6 +122,7 @@ namespace Assets.Scripts.Player
             if (!canRunFaster) return;
             speedIndicator.SetActive(true);
             moveSpeed *= 2f;
+            anim.speed = 2f;
             comboControls.Boots = true;
             canRunFaster = false;
             StartCoroutine(restoreSpeed());
@@ -112,6 +132,7 @@ namespace Assets.Scripts.Player
         {
             yield return new WaitForSeconds(2f);
             moveSpeed = originalSpeed;
+            anim.speed = 1f;
             speedIndicator.SetActive(false);
             yield return new WaitForSeconds(2f);
             canRunFaster = true;
@@ -152,6 +173,8 @@ namespace Assets.Scripts.Player
         public void GunRelease()
         {
             comboControls.Gun = false;
+            anim.SetBool("Shoot", false);
+            anim.SetTrigger("Idle");
         }
 
         public void ShieldRelease()

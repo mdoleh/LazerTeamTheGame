@@ -26,6 +26,16 @@ namespace Assets.Scripts.Player
                 player.Crouch();
             }
 
+            // Handle movement key release
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                player.Idle();
+            }
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                player.Idle();
+            }
+
             // Handle equipment
             if (Input.GetKey(KeyCode.Keypad2))
             {
