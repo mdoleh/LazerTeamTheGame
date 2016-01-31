@@ -54,6 +54,7 @@ public class ComboPlayerControls : MonoBehaviour, IComboPlayerControls
     {
         if (Gun && Shield && readyToFire)
         {
+            GetComponent<Player>().HideShield();
             resetCoolDown();
             Gun = false;
             Shield = false;

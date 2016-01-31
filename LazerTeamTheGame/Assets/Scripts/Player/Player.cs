@@ -15,8 +15,10 @@ namespace Assets.Scripts.Player
         public bool facingRight = true;
         public Transform laser;
         public GameObject laserShot;
+        public GameObject shield;
 
         private bool canShoot = true;
+        private bool canRaiseShield = true;
 
         private void Start()
         {
@@ -53,11 +55,11 @@ namespace Assets.Scripts.Player
 
         public void Gun()
         {
-            if (!canShoot) return;
+            comboControls.Gun = true;
+            if (!canShoot || comboControls.Shield) return;
             var newShot = Instantiate(laserShot);
             newShot.transform.position = laser.position;
             newShot.GetComponent<Rigidbody2D>().velocity = facingRight ? new Vector2(20f, 0f) : new Vector2(-20f, 0f);
-            comboControls.Gun = true;
             canShoot = false;
             StartCoroutine(DelayShot());
         }
@@ -70,7 +72,24 @@ namespace Assets.Scripts.Player
 
         public void Shield()
         {
+            if (!canRaiseShield || comboControls.Gun) return;
+            shield.SetActive(true);
             comboControls.Shield = true;
+            canRaiseShield = false;
+            StartCoroutine(DropShield());
+        }
+
+        private IEnumerator DropShield()
+        {
+            yield return new WaitForSeconds(3f);
+            HideShield();
+            yield return new WaitForSeconds(2f);
+            canRaiseShield = true;
+        }
+
+        public void HideShield()
+        {
+            shield.SetActive(false);
         }
 
         public void Boots()
