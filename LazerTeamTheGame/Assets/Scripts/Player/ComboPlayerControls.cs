@@ -18,6 +18,7 @@ public class ComboPlayerControls : MonoBehaviour, IComboPlayerControls
 
     public GameObject beam;
     public GameObject shieldDash;
+    public GameObject chargeMeter;
 
     private Rigidbody2D rigidbody;
     private float CoolDown;
@@ -58,10 +59,9 @@ public class ComboPlayerControls : MonoBehaviour, IComboPlayerControls
             Shield = false;
             disableBasicControls();
             beam.SetActive(true);
-            var animationLength = beam.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0).Length;
             var originalMass = rigidbody.mass;
             rigidbody.mass = 100000f;
-            StartCoroutine(enableBasicControls(animationLength, () =>
+            StartCoroutine(enableBasicControls(1f, () =>
             {
                 beam.transform.localScale = Vector2.zero;
                 beam.SetActive(false);
@@ -82,6 +82,7 @@ public class ComboPlayerControls : MonoBehaviour, IComboPlayerControls
     {
         CoolDown += Time.deltaTime;
         readyToFire = CoolDown >= CoolDownTime;
+        if (readyToFire) chargeMeter.SetActive(true);
         ShieldDash();
         DarkMatterRay();
     }
@@ -95,5 +96,6 @@ public class ComboPlayerControls : MonoBehaviour, IComboPlayerControls
     {
         CoolDown = 0f;
         readyToFire = false;
+        chargeMeter.SetActive(false);
     }
 }

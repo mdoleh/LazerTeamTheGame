@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Player
@@ -11,6 +13,10 @@ namespace Assets.Scripts.Player
         private Rigidbody2D rigidbody;
         private Transform groundCheck;
         public bool facingRight = true;
+        public Transform laser;
+        public GameObject laserShot;
+
+        private bool canShoot = true;
 
         private void Start()
         {
@@ -25,19 +31,19 @@ namespace Assets.Scripts.Player
 
         public void MoveRight()
         {
-            rigidbody.AddForce(Vector2.right * 300f * rigidbody.mass);
+            rigidbody.AddForce(Vector2.right * 150 * rigidbody.mass);
             if (!facingRight) Flip();
         }
 
         public void MoveLeft()
         {
-            rigidbody.AddForce(Vector2.left * 300f * rigidbody.mass);
+            rigidbody.AddForce(Vector2.left * 150 * rigidbody.mass);
             if (facingRight) Flip();
         }
 
         public void Jump()
         {
-            if (isGrounded) rigidbody.AddForce(Vector2.up * 3000f * rigidbody.mass);
+            if (isGrounded) rigidbody.AddForce(Vector2.up * 2000f * rigidbody.mass);
         }
 
         public void Crouch()
@@ -47,7 +53,19 @@ namespace Assets.Scripts.Player
 
         public void Gun()
         {
+            if (!canShoot) return;
+            var newShot = Instantiate(laserShot);
+            newShot.transform.position = laser.position;
+            newShot.GetComponent<Rigidbody2D>().velocity = facingRight ? new Vector2(20f, 0f) : new Vector2(-20f, 0f);
             comboControls.Gun = true;
+            canShoot = false;
+            StartCoroutine(DelayShot());
+        }
+
+        private IEnumerator DelayShot()
+        {
+            yield return new WaitForSeconds(0.3f);
+            canShoot = true;
         }
 
         public void Shield()
