@@ -7,6 +7,8 @@ namespace Assets.Scripts.Player
 {
     public class Player : Character, IPlayerControls
     {
+        public float moveSpeed = 150f;
+        private float originalSpeed = 0f;
         public ComboPlayerControls comboControls;
         [HideInInspector] public bool isGrounded = true;
 
@@ -16,14 +18,17 @@ namespace Assets.Scripts.Player
         public Transform laser;
         public GameObject laserShot;
         public GameObject shield;
+        public GameObject speedIndicator;
 
         private bool canShoot = true;
         private bool canRaiseShield = true;
+        private bool canRunFaster = true;
 
         private void Start()
         {
             rigidbody = GetComponent<Rigidbody2D>();
             groundCheck = transform.Find("groundCheck");
+            originalSpeed = moveSpeed;
         }
 
         private void Update()
@@ -33,19 +38,19 @@ namespace Assets.Scripts.Player
 
         public void MoveRight()
         {
-            rigidbody.AddForce(Vector2.right * 150 * rigidbody.mass);
+            rigidbody.AddForce(Vector2.right * moveSpeed * rigidbody.mass);
             if (!facingRight) Flip();
         }
 
         public void MoveLeft()
         {
-            rigidbody.AddForce(Vector2.left * 150 * rigidbody.mass);
+            rigidbody.AddForce(Vector2.left * moveSpeed * rigidbody.mass);
             if (facingRight) Flip();
         }
 
         public void Jump()
         {
-            if (isGrounded) rigidbody.AddForce(Vector2.up * 2000f * rigidbody.mass);
+            if (isGrounded) rigidbody.AddForce(Vector2.up * 2000f * rigidbody.mass * (comboControls.Boots ? 2f : 1f));
         }
 
         public void Crouch()
@@ -94,7 +99,21 @@ namespace Assets.Scripts.Player
 
         public void Boots()
         {
+            if (!canRunFaster) return;
+            speedIndicator.SetActive(true);
+            moveSpeed *= 2f;
             comboControls.Boots = true;
+            canRunFaster = false;
+            StartCoroutine(restoreSpeed());
+        }
+
+        private IEnumerator restoreSpeed()
+        {
+            yield return new WaitForSeconds(2f);
+            moveSpeed = originalSpeed;
+            speedIndicator.SetActive(false);
+            yield return new WaitForSeconds(2f);
+            canRunFaster = true;
         }
 
         public void Helmet()
