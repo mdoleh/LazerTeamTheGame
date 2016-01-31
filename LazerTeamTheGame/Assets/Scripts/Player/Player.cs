@@ -23,6 +23,7 @@ namespace Assets.Scripts.Player
         private bool canShoot = true;
         private bool canRaiseShield = true;
         private bool canRunFaster = true;
+        private bool canUseHelmet = true;
 
         private void Start()
         {
@@ -61,7 +62,7 @@ namespace Assets.Scripts.Player
         public void Gun()
         {
             comboControls.Gun = true;
-            if (!canShoot || comboControls.Shield) return;
+            if (!canShoot || comboControls.Shield || comboControls.Helmet) return;
             var newShot = Instantiate(laserShot);
             newShot.transform.position = laser.position;
             newShot.GetComponent<Rigidbody2D>().velocity = facingRight ? new Vector2(20f, 0f) : new Vector2(-20f, 0f);
@@ -118,7 +119,24 @@ namespace Assets.Scripts.Player
 
         public void Helmet()
         {
+            if (!canUseHelmet || comboControls.Gun) return;
+            canUseHelmet = false;
+            Time.timeScale = 0.5f;
             comboControls.Helmet = true;
+            StartCoroutine(delayRestoreTime());
+        }
+
+        public void restoreTime()
+        {
+            Time.timeScale = 1f;
+        }
+
+        private IEnumerator delayRestoreTime()
+        {
+            yield return new WaitForSeconds(3f);
+            restoreTime();
+            yield return new WaitForSeconds(2f);
+            canUseHelmet = true;
         }
 
         public void BootsRelease()

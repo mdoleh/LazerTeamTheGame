@@ -4,5 +4,6 @@
     {
         void ShieldDash();
         void DarkMatterRay();
+        void HomingMissle();
     }
 }

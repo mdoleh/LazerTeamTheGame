@@ -19,6 +19,7 @@ public class ComboPlayerControls : MonoBehaviour, IComboPlayerControls
     public GameObject beam;
     public GameObject shieldDash;
     public GameObject chargeMeter;
+    public GameObject homingMissle;
 
     private Rigidbody2D rigidbody;
     private float CoolDown;
@@ -72,6 +73,23 @@ public class ComboPlayerControls : MonoBehaviour, IComboPlayerControls
         }
     }
 
+    public void HomingMissle()
+    {
+        if (Gun && Helmet && readyToFire)
+        {
+            var player = GetComponent<Player>();
+            player.restoreTime();
+            resetCoolDown();
+            Gun = false;
+            Helmet = false;
+            disableBasicControls();
+            var newShot = Instantiate(homingMissle);
+            newShot.transform.position = player.laser.position;
+            newShot.GetComponent<Rigidbody2D>().velocity = player.facingRight ? new Vector2(20f, 0f) : new Vector2(-20f, 0f);
+            StartCoroutine(enableBasicControls(0.5f, () => { }));
+        }
+    }
+
     private IEnumerator enableBasicControls(float delay, Action afterDelay)
     {
         yield return new WaitForSeconds(delay);
@@ -86,6 +104,7 @@ public class ComboPlayerControls : MonoBehaviour, IComboPlayerControls
         if (readyToFire) chargeMeter.SetActive(true);
         ShieldDash();
         DarkMatterRay();
+        HomingMissle();
     }
 
     private void disableBasicControls()

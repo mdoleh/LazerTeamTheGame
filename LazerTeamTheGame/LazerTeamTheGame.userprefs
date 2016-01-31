@@ -1,7 +1,8 @@
 ﻿<Properties StartupItem="LazerTeamTheGame.CSharp.Plugins.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Damage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FollowCharacter.cs">
     <Files>
+      <File FileName="Assets\Scripts\FollowCharacter.cs" Line="15" Column="1" />
       <File FileName="Assets\Scripts\Damage.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\ComboPlayerControls.cs" Line="1" Column="1" />
