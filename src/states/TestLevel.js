@@ -1,6 +1,5 @@
 /* globals __DEV__ */
 import Phaser from 'phaser'
-var platforms;
 
 export default class extends Phaser.State {
   init() { }
@@ -9,65 +8,52 @@ export default class extends Phaser.State {
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
-    this.load.spritesheet('dude', 
-        'assets/dude.png',
-        { frameWidth: 32, frameHeight: 48 }
-    );
+    this.load.spritesheet('dude', 'assets/dude.png', 32, 48);
   }
 
   create() {
-    // TODO: figure out why this isn't working
-    platforms = this.physics.add.staticGroup();
+    this.physics.startSystem(Phaser.Physics.ARCADE);
+    this.platforms = this.add.group();
+    this.platforms.enableBody = true;
 
-    platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+    // Here we create the ground.
+    let ground = this.platforms.create(0, game.world.height - 64, 'ground');
+    //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
+    ground.scale.setTo(2, 2);
+    //  This stops it from falling away when you jump on it
+    ground.body.immovable = true;
 
-    platforms.create(600, 400, 'ground');
-    platforms.create(50, 250, 'ground');
-    platforms.create(750, 220, 'ground');
+    //  Now let's create two ledges
+    let ledge = this.platforms.create(400, 400, 'ground');
+    ledge.body.immovable = true;
+    ledge = this.platforms.create(-150, 250, 'ground');
+    ledge.body.immovable = true;
 
-    this.player = this.physics.add.sprite(this.world.centerX, this.world.centerY, 'dude');
+    // this.player = this.physics.add.sprite(this.world.centerX, this.world.centerY, 'dude');
+    this.player = this.add.sprite(32, this.world.height - 150, 'dude');
+    this.physics.arcade.enable(this.player);
+
+    this.player.body.bounce.y = 0.2;
+    this.player.body.gravity.y = 300;
+    this.player.collideWorldBounds = true;
+
+    // key, frame indexes, frameRate, loop
+    this.player.animations.add('left', [0, 1, 2, 3], 10, false);
+    this.player.animations.add('right', [5, 6, 7, 8], 10, false);
+    this.player.animations.add('turn', [4], 10, false);
 
     this.cursors = this.input.keyboard.createCursorKeys();
-    this.game.add.existing(this.player);
-    this.player.body.setGravity(300);
-    this.player.setColliderWorldBounds(true);
-
-    this.anims.create({
-        key: 'left',
-        frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
-        frameRate: 10,
-        repeat: -1
-    });
-    
-    this.anims.create({
-        key: 'turn',
-        frames: [ { key: 'dude', frame: 4 } ],
-        frameRate: 20
-    });
-    
-    this.anims.create({
-        key: 'right',
-        frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
-        frameRate: 10,
-        repeat: -1
-    });
   }
 
   update() {
-    if (this.cursors.up.isDown){
-      this.player.move(0, -1);
-    }
-
-    if (this.cursors.down.isDown){
-      this.player.move(0, 1);
-    }
+    this.physics.arcade.collide(this.player, this.platforms);
 
     if (this.cursors.left.isDown){
-      this.player.move(-1, 0);
+      this.player.animations.play('left');
     }
 
     if (this.cursors.right.isDown){
-      this.player.move(1, 0);
+        this.player.animations.play('right');
     }
   }
 

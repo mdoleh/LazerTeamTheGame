@@ -6,7 +6,7 @@ import Phaser from 'phaser';
 
 import BootState from './states/Boot';
 import SplashState from './states/Splash';
-import GameState from './states/Game';
+import TitleScreen from './states/TitleScreen';
 import TestLevel from './states/TestLevel';
 
 import config from './config';
@@ -18,12 +18,13 @@ class Game extends Phaser.Game {
     const height = docElement.clientHeight > config.gameHeight ? config.gameHeight : docElement.clientHeight;
 
     // width, height, type, parent, state, transparent, antialias, physicsConfig
-    super(width, height, config.type, 'content', null, false, true, config.physics);
+    // super(width, height, config.type, 'content', null, false, true, config.physics);
+    super(width, height, config.type, 'content');
 
     // add(unique-key, state-obj, autoStart)
     this.state.add('Boot', BootState, false);
     this.state.add('Splash', SplashState, false);
-    this.state.add('Game', GameState, false);
+    this.state.add('TitleScreen', TitleScreen, false);
     this.state.add('TestLevel', TestLevel, false);
 
     this.state.start('Boot');
