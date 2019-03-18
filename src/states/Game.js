@@ -8,24 +8,27 @@ export default class extends Phaser.State {
   preload() { }
 
   create() {
-    const bannerText = lang.text('welcome')
+    const bannerText = lang.text('title');
     let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText, {
       font: '40px Bangers',
       fill: '#77BFA3',
       smoothed: false
-    })
+    });
+    banner.inputEnabled = true;
+    banner.events.onInputUp.add(item => this.state.start('TestLevel'), this);
+    banner.events.onInputOver.add(item => item.fill = '#ff0044', this);
+    banner.events.onInputOut.add(item => item.fill = '#77BFA3', this);
 
-    banner.padding.set(10, 16)
-    banner.anchor.setTo(0.5)
+    banner.anchor.setTo(0.5);
 
     this.mushroom = new Mushroom({
       game: this.game,
       x: this.world.centerX,
       y: this.world.centerY,
       asset: 'mushroom'
-    })
+    });
 
-    this.game.add.existing(this.mushroom)
+    this.game.add.existing(this.mushroom);
   }
 
   render() {

@@ -1,11 +1,9 @@
 import idiom from 'idiom.js'
 
 const lang = idiom({
+  // en-US
   'default': {
-    'welcome': 'Welcome to Phaser + ES6 + Webpack!'
-  },
-  'pt-BR': {
-    'welcome': 'Bem vindo ao Phaser + ES6 + Webpack!'
+    'title': 'Lazer Team the Movie the Game'
   }
 })
 
