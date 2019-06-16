@@ -9,9 +9,5 @@ export default {
             debug: false
         }
     },
-    scene: {
-        preload: null,
-        create: null,
-        update: null
-    }
+    scene: []
 };
