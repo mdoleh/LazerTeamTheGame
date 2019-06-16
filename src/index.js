@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 import config from "./config";
-import BootScene from "./boot-scene";
-import Tutorial from "./tutorial";
+import BootScene from "./scenes/boot-scene";
+import Tutorial from "./scenes/tutorial";
 
 config.scene = [
     BootScene,
