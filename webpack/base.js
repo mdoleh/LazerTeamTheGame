@@ -33,5 +33,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./index.html"
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['.ts', '.js']
+  }
 };
