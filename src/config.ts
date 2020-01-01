@@ -1,3 +1,8 @@
+import 'phaser';
+
+import BootScene from "./scenes/boot-scene";
+import Tutorial from "./scenes/tutorial";
+
 export default {
     type: Phaser.AUTO,
     width: 800,
@@ -9,5 +14,8 @@ export default {
             debug: false
         }
     },
-    scene: []
+    scene: [
+        BootScene,
+        Tutorial
+    ]
 };
