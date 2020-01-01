@@ -1,12 +1,10 @@
-import Phaser from "phaser";
+export default class BootScene extends Phaser.Scene {
+    
+    constructor() {
+        super({key: 'BootScene'});
+    }
 
-export default new Phaser.Class({
-    Extends: Phaser.Scene,
-    initialize: function BootScene() {
-        Phaser.Scene.call (this, {key: 'BootScene'});
-    },
-
-    preload: function() {
+    preload() {
         this.load.image('sky', 'src/assets/sky.png');
         this.load.image('ground', 'src/assets/platform.png');
         this.load.image('star', 'src/assets/star.png');
@@ -15,9 +13,9 @@ export default new Phaser.Class({
             'src/assets/dude.png',
             { frameWidth: 32, frameHeight: 48 }
         );
-    },
+    }
 
-    create: function() {
+    create() {
         this.scene.start("Tutorial");
     }
-});
+}
