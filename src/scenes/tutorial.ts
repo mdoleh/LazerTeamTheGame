@@ -120,8 +120,8 @@ export default class Tutorial extends Phaser.Scene {
     hitBomb(player: Phaser.GameObjects.Sprite, bomb: any) {
         this.physics.pause();
     
-        this.player.setTint(0xff0000);
+        player.setTint(0xff0000);
     
-        this.player.anims.play('turn');
+        player.anims.play('turn');
     }
 }
