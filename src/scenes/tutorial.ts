@@ -25,7 +25,7 @@ export default class Tutorial extends Phaser.Scene {
         this.platforms.create(50, 250, 'ground');
         this.platforms.create(750, 220, 'ground');
 
-        PlayerHelper.create(this.player, this.physics, this.anims);
+        this.player = PlayerHelper.create(this.player, this.physics, this.anims);
       
         this.physics.add.collider(this.player, this.platforms);
         this.cursors = this.input.keyboard.createCursorKeys();

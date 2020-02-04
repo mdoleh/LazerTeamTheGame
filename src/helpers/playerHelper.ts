@@ -8,7 +8,7 @@ export default class PlayerHelper {
 
     static create(player: Phaser.Physics.Arcade.Sprite, 
         physics: Phaser.Physics.Arcade.ArcadePhysics, 
-        anims: Phaser.Animations.AnimationManager) {
+        anims: Phaser.Animations.AnimationManager) : Phaser.Physics.Arcade.Sprite {
         player = physics.add.sprite(100, 450, 'dude');
     
         player.setBounce(0.2);
@@ -33,6 +33,8 @@ export default class PlayerHelper {
             frameRate: 10,
             repeat: -1
         });
+
+        return player;
     }
 
     static update(player: Phaser.Physics.Arcade.Sprite, 
