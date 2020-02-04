@@ -48,6 +48,11 @@ export default class Tutorial extends Phaser.Scene {
         this.physics.add.collider(this.bombs, this.platforms);
       
         this.physics.add.collider(this.player, this.bombs, this.hitBomb, null, this);
+        
+        this.physics.world.setBounds(0, 0, 800 * 4, 600 * 4);
+        this.cameras.main.setBounds(0, 0, 800 * 4, 600 * 4);
+        this.cameras.main.startFollow(this.player);
+        this.cameras.main.setFollowOffset(100, 100);
     }
 
     update() {
