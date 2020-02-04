@@ -54,7 +54,7 @@ export default class Tutorial extends Phaser.Scene {
         PlayerHelper.update(this.player, this.cursors);
     }
 
-    collectStar(player: Phaser.GameObjects.Sprite, star: any) {
+    collectStar(player: Phaser.Physics.Arcade.Sprite, star: Phaser.Physics.Arcade.Sprite) {
         star.disableBody(true, true);
     
         this.score += 10;
@@ -74,7 +74,7 @@ export default class Tutorial extends Phaser.Scene {
         }
     }
     
-    hitBomb(player: Phaser.GameObjects.Sprite, bomb: any) {
+    hitBomb(player: Phaser.Physics.Arcade.Sprite, bomb: any) {
         this.physics.pause();
     
         player.setTint(0xff0000);
