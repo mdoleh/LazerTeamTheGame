@@ -1,0 +1,24 @@
+{ "columns":11,
+ "image":"..\/images\/super_mario.png",
+ "imageheight":64,
+ "imagewidth":176,
+ "margin":0,
+ "name":"super_mario",
+ "spacing":0,
+ "tilecount":44,
+ "tiledversion":"1.7.2",
+ "tileheight":16,
+ "tiles":[
+        {
+         "id":39,
+         "properties":[
+                {
+                 "name":"hasCollisions",
+                 "type":"bool",
+                 "value":true
+                }]
+        }],
+ "tilewidth":16,
+ "type":"tileset",
+ "version":"1.6"
+}

@@ -19,7 +19,8 @@ export default class Tutorial extends Phaser.Scene {
         
         this.platforms = this.physics.add.staticGroup();
       
-        this.platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+        this.platforms.add(new Phaser.GameObjects.TileSprite(this, 400, 568, 800, 64, 'ground'));
+        // this.platforms.create(400, 568, 'ground').setDisplaySize(800, 64).refreshBody();
       
         this.platforms.create(600, 400, 'ground');
         this.platforms.create(50, 250, 'ground');

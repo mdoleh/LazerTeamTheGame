@@ -1,7 +1,8 @@
 import 'phaser';
 
-import BootScene from "./scenes/boot-scene";
-import Tutorial from "./scenes/tutorial";
+import BootScene from './scenes/boot-scene';
+import Tutorial from './scenes/tutorial';
+import TileScene from './scenes/tiled-scene';
 
 export default {
     type: Phaser.AUTO,
@@ -16,6 +17,7 @@ export default {
     },
     scene: [
         BootScene,
-        Tutorial
+        Tutorial,
+        TileScene
     ]
 };
