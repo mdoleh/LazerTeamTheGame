@@ -106,6 +106,15 @@
          "tileheight":16,
          "tiles":[
                 {
+                 "id":23,
+                 "properties":[
+                        {
+                         "name":"hasCollisions",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
                  "id":29,
                  "objectgroup":
                     {

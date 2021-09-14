@@ -27,7 +27,6 @@ export default class TileScene extends Phaser.Scene {
         this.player = PlayerHelper.create(this.player, this.physics, this.anims);
         this.physics.add.existing(this.player);
         for (const layer of layers) {
-            map.setCollisionFromCollisionGroup(true);
             map.setCollisionByProperty({ hasCollisions: true });
             this.physics.add.collider(this.player, layer);
         }
