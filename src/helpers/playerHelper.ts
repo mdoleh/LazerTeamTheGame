@@ -6,10 +6,9 @@ export default class PlayerHelper {
         );
     }
 
-    static create(player: Phaser.Physics.Arcade.Sprite, 
-        physics: Phaser.Physics.Arcade.ArcadePhysics, 
+    static create(physics: Phaser.Physics.Arcade.ArcadePhysics, 
         anims: Phaser.Animations.AnimationManager) : Phaser.Physics.Arcade.Sprite {
-        player = physics.add.sprite(0, 0, 'dude');
+        const player = physics.add.sprite(0, 0, 'dude');
     
         player.setBounce(0.2);
         player.setCollideWorldBounds(true);
