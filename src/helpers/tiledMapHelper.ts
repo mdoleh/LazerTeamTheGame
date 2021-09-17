@@ -1,4 +1,4 @@
-import { TileMapMetadata } from "../interfaces/tileMapMetadata";
+import { SourceKeyPair } from "../interfaces/sourceKeyPair";
 
 export interface MapResult {
     map: Phaser.Tilemaps.Tilemap,
@@ -6,10 +6,10 @@ export interface MapResult {
 }
 
 export default class TileMapHelper {
-    mapImage: TileMapMetadata;
-    mapJson: TileMapMetadata;
+    mapImage: SourceKeyPair;
+    mapJson: SourceKeyPair;
 
-    constructor(mapImage: TileMapMetadata, mapJson: TileMapMetadata) {
+    constructor(mapImage: SourceKeyPair, mapJson: SourceKeyPair) {
         this.mapImage = mapImage;
         this.mapJson = mapJson;
     }
