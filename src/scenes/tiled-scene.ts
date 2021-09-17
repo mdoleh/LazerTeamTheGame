@@ -25,7 +25,6 @@ export default class TileScene extends Phaser.Scene {
     }
 
     create() {
-        
         const { map, layers } = this.mapHelper.create(this.make, this.cameras.main);
         this.cursors = this.input.keyboard.createCursorKeys();
         this.player = PlayerHelper.create(this.physics, this.anims);

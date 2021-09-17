@@ -1,4 +1,4 @@
-import { TileMapMetadata } from "../interfaces/tilemap";
+import { TileMapMetadata } from "../interfaces/tileMapMetadata";
 
 export interface MapResult {
     map: Phaser.Tilemaps.Tilemap,
