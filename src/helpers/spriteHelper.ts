@@ -20,7 +20,7 @@ export default class SpriteHelper {
         );
     }
 
-    create(physics: Phaser.Physics.Arcade.ArcadePhysics, 
+    createStatic(physics: Phaser.Physics.Arcade.ArcadePhysics, 
         anims: Phaser.Animations.AnimationManager): Phaser.Physics.Arcade.Sprite {
         const { spriteKey, frameCount } = this.animation;
         const sprite = physics.add.staticSprite(this.position.x, this.position.y, spriteKey);

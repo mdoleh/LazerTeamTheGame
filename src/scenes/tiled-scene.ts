@@ -28,7 +28,7 @@ export default class TileScene extends Phaser.Scene {
         const { map, layers } = this.mapHelper.create(this.make, this.cameras.main);
         this.cursors = this.input.keyboard.createCursorKeys();
         this.player = PlayerHelper.create(this.physics, this.anims);
-        const enemy = this.spriteMaker.create(this.physics, this.anims);
+        const enemy = this.spriteMaker.createStatic(this.physics, this.anims);
         this.physics.add.existing(this.player);
         for (const layer of layers) {
             map.setCollisionByProperty({ hasCollisions: true });
