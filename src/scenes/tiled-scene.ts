@@ -32,7 +32,8 @@ export default class TileScene extends Phaser.Scene {
         this.physics.add.existing(this.player);
         for (const layer of layers) {
             map.setCollisionByProperty({ hasCollisions: true });
-            this.physics.add.collider(this.player, layer);
+            map.setCollisionByProperty({ destructible: true });
+            this.physics.add.collider(this.player, layer, this.destructibleCollision, this.shouldCollide);
         }
 
         this.physics.add.collider(this.player, enemy);
@@ -40,5 +41,17 @@ export default class TileScene extends Phaser.Scene {
 
     update() {
         PlayerHelper.update(this.player, this.cursors);
+    }
+
+    destructibleCollision(player, block) {
+        if (block?.properties?.destructible) {
+            block.setVisible(false);
+            block.destroy();
+        }
+    }
+
+    shouldCollide(player, block) {
+        // destroyed objects do not have properties set
+        return !!block.properties;
     }
 }
