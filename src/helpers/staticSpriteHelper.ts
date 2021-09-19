@@ -1,7 +1,7 @@
 import { Animation } from "../interfaces/animation";
 import { Position } from "../interfaces/position";
 
-export default class SpriteHelper {
+export default class StaticSpriteHelper {
     animation: Animation
     position: Position
 
@@ -20,7 +20,7 @@ export default class SpriteHelper {
         );
     }
 
-    createStatic(physics: Phaser.Physics.Arcade.ArcadePhysics, 
+    create(physics: Phaser.Physics.Arcade.ArcadePhysics, 
         anims: Phaser.Animations.AnimationManager): Phaser.Physics.Arcade.Sprite {
         const { spriteKey, frameCount } = this.animation;
         const sprite = physics.add.staticSprite(this.position.x, this.position.y, spriteKey);

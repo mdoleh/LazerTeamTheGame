@@ -1,11 +1,11 @@
 import PlayerHelper from '../helpers/playerHelper';
-import SpriteHelper from '../helpers/spriteHelper';
+import StaticSpriteHelper from '../helpers/staticSpriteHelper';
 import TileMapHelper from '../helpers/tiledMapHelper';
 
 export default class TileScene extends Phaser.Scene {
     player: Phaser.Physics.Arcade.Sprite;
     cursors: Phaser.Types.Input.Keyboard.CursorKeys;
-    spriteMaker: SpriteHelper = new SpriteHelper({ 
+    spriteMaker: StaticSpriteHelper = new StaticSpriteHelper({ 
         spriteKey: 'enemy',
         spriteSheetSrc: 'src/assets/images/simple-animation.png',
         frameDimensions: { width: 32, height: 48 },
@@ -28,7 +28,7 @@ export default class TileScene extends Phaser.Scene {
         const { map, layers } = this.mapHelper.create(this.make, this.cameras.main);
         this.cursors = this.input.keyboard.createCursorKeys();
         this.player = PlayerHelper.create(this.physics, this.anims);
-        const enemy = this.spriteMaker.createStatic(this.physics, this.anims);
+        const enemy = this.spriteMaker.create(this.physics, this.anims);
         this.physics.add.existing(this.player);
         for (const layer of layers) {
             map.setCollisionByProperty({ hasCollisions: true });
