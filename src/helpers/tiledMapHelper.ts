@@ -17,6 +17,7 @@ export default class TileMapHelper {
     preload(load: Phaser.Loader.LoaderPlugin) {
         load.image(this.mapImage.key, this.mapImage.src);
         load.tilemapTiledJSON(this.mapJson.key, this.mapJson.src);
+        // load.json()
     }
 
     create(make: Phaser.GameObjects.GameObjectCreator, mainCamera: Phaser.Cameras.Scene2D.Camera): MapResult {
@@ -25,8 +26,8 @@ export default class TileMapHelper {
         const map = make.tilemap({ key: this.mapJson.key });
         const tiles = map.addTilesetImage(imageName, this.mapImage.key);
         const layers: Phaser.Tilemaps.TilemapLayer[] = [];
-        for (let i = 0; i < map.layers.length; ++i) {
-            layers.push(map.createLayer(map.layers[i].name, tiles, 0, 0));
+        for (const layer of map.layers) {
+            layers.push(map.createLayer(layer.name, tiles, 0, 0));
         }
         mainCamera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         return { layers, map };

@@ -1,7 +1,7 @@
-import { Animation } from "../interfaces/animation";
-import { Position } from "../interfaces/position";
+import { Animation } from "../../interfaces/animation";
+import { Position } from "../../interfaces/position";
 
-export default class StaticSpriteHelper {
+export default class AnimatedSpriteHelper {
     animation: Animation
     position: Position
 

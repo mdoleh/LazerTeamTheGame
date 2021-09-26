@@ -1,0 +1,17 @@
+[
+    {
+        "animation": {
+            "spriteSheetSrc": "src/assets/images/green_effect.png",
+            "spriteKey": "explosion",
+            "frameCount": 10,
+            "frameDimensions": {
+                "width": 32,
+                "height": 32
+            }
+        },
+        "position": {
+            "x": 100,
+            "y": 50
+        }
+    }
+]
