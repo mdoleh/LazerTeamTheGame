@@ -1,5 +1,7 @@
+import { SpriteData } from "../interfaces/spriteData";
+
 export default class ObstacleHelper {
-    jsonSrc: any;
+    jsonSrc: SpriteData[];
 
     constructor(jsonSrc: any) {
         this.jsonSrc = jsonSrc;
