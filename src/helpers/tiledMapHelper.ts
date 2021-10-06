@@ -24,6 +24,8 @@ export default class TileMapHelper {
         const imageName = this.getImageName(this.mapImage.src);
         // must use embedded tilesets in map JSON
         const map = make.tilemap({ key: this.mapJson.key });
+        // TODO: tileset name does not have to match image name
+        // better to pull this data from the map json
         const tiles = map.addTilesetImage(imageName, this.mapImage.key);
         const layers: Phaser.Tilemaps.TilemapLayer[] = [];
         for (const layer of map.layers) {
