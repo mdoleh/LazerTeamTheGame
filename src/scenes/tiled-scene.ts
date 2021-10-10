@@ -52,7 +52,7 @@ export default class TileScene extends Phaser.Scene {
     }
 
     explosionCollision(player, obstacle) {
-        obstacle.anims.play(obstacle.texture.key);
+        obstacle.anims.play(obstacle.texture.key, true);
     }
 
     destructibleCollision(player, block) {
