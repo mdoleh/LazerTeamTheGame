@@ -1,4 +1,4 @@
-import ObstacleHelper from '../helpers/obstacleHelper';
+import ObstacleHelper from '../helpers/sprites/obstacleHelper';
 import PlayerHelper from '../helpers/playerHelper';
 import AnimatedSpriteHelper from '../helpers/sprites/animatedSpriteHelper';
 import TileMapHelper from '../helpers/tiledMapHelper';
@@ -8,7 +8,7 @@ export default class TileScene extends Phaser.Scene {
     player: Phaser.Physics.Arcade.Sprite;
     cursors: Phaser.Types.Input.Keyboard.CursorKeys;
     spriteMaker: AnimatedSpriteHelper = new AnimatedSpriteHelper({ 
-        spriteKey: 'enemy',
+        key: 'enemy',
         spriteSheetSrc: 'src/assets/images/simple-animation.png',
         frameDimensions: { width: 32, height: 48 },
         frameCount: 4 },
@@ -52,7 +52,7 @@ export default class TileScene extends Phaser.Scene {
     }
 
     explosionCollision(player, obstacle) {
-        obstacle.anims.play(obstacle.texture.key, true);
+        obstacle.anims.play(`${obstacle.name}_destroyed`, true);
     }
 
     destructibleCollision(player, block) {

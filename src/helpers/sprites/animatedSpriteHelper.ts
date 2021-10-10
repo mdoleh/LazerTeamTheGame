@@ -11,10 +11,10 @@ export default class AnimatedSpriteHelper {
     }
 
     preload(load: Phaser.Loader.LoaderPlugin) {
-        const { spriteKey, spriteSheetSrc, frameDimensions: dimensions } = this.animation;
+        const { key, spriteSheetSrc, frameDimensions: dimensions } = this.animation;
 
         load.spritesheet(
-            spriteKey, 
+            key, 
             spriteSheetSrc,
             { frameWidth: dimensions.width, frameHeight: dimensions.height }
         );
@@ -22,16 +22,16 @@ export default class AnimatedSpriteHelper {
 
     create(physics: Phaser.Physics.Arcade.ArcadePhysics, 
         anims: Phaser.Animations.AnimationManager): Phaser.Physics.Arcade.Sprite {
-        const { spriteKey, frameCount } = this.animation;
-        const sprite = physics.add.staticSprite(this.position.x, this.position.y, spriteKey);
+        const { key, frameCount } = this.animation;
+        const sprite = physics.add.staticSprite(this.position.x, this.position.y, key);
 
         anims.create({
-            key: spriteKey,
-            frames: anims.generateFrameNumbers(spriteKey, { start: 0, end: frameCount - 1 }),
+            key: key,
+            frames: anims.generateFrameNumbers(key, { start: 0, end: frameCount - 1 }),
             frameRate: 10,
             repeat: -1
         });
-        sprite.anims.play(spriteKey, true);
+        sprite.anims.play(key, true);
         return sprite;
     }
 }

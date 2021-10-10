@@ -1,14 +1,26 @@
 [
     {
-        "animation": {
-            "spriteSheetSrc": "src/assets/images/green_effect.png",
-            "spriteKey": "explosion",
-            "frameCount": 10,
-            "frameDimensions": {
-                "width": 32,
-                "height": 32
+        "animations": {
+            "destroyed": {
+                "spriteSheetSrc": "src/assets/images/green_effect.png",
+                "key": "enemy_destroyed",
+                "frameCount": 10,
+                "frameDimensions": {
+                    "width": 32,
+                    "height": 32
+                }
+            },
+            "static": {
+                "spriteSheetSrc": "src/assets/images/simple-animation.png",
+                "key": "enemy_static",
+                "frameCount": 4,
+                "frameDimensions": { 
+                    "width": 32,
+                    "height": 48
+                }
             }
         },
+        "spriteKey": "enemy",
         "positions": [
             {
                 "x": 100,
