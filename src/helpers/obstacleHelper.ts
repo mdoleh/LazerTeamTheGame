@@ -23,9 +23,11 @@ export default class ObstacleHelper {
         const sprites = [];
 
         for (const spriteData of this.jsonSrc) {
-            const { animation, position } = spriteData;
-            const sprite = physics.add.staticSprite(position.x, position.y, animation.spriteKey);
-            sprites.push(sprite);
+            const { animation, positions } = spriteData;
+            for (const position of positions) {
+                const sprite = physics.add.staticSprite(position.x, position.y, animation.spriteKey);
+                sprites.push(sprite);
+            }
 
             if (!anims.exists(animation.spriteKey)) {
                 anims.create({

@@ -3,5 +3,5 @@ import { Position } from "./position";
 
 export interface SpriteData {
     animation: Animation;
-    position: Position;
+    positions: Position[];
 }
