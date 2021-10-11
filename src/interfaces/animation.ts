@@ -1,7 +1,7 @@
 export interface Animation {
     frameDimensions: FrameDimensions,
     spriteSheetSrc: string,
-    key: string,
+    spriteSheetKey: string,
     frameCount: number,
     repeat: number
 }

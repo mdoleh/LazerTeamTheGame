@@ -1,8 +1,9 @@
-import { SpriteData } from "../../interfaces/spriteData";
-import { Animation } from "../../interfaces/animation"
+import { SpriteData } from '../../interfaces/spriteData';
+import { Animation } from '../../interfaces/animation'
 
-export default class ObstacleHelper {
+export default class SpriteGenerator {
     jsonSrc: SpriteData[];
+    spriteSheetMap: any = {};
 
     constructor(jsonSrc: any) {
         this.jsonSrc = jsonSrc;
@@ -15,8 +16,12 @@ export default class ObstacleHelper {
             for (const prop in animations) {
                 const animation = animations[prop] as Animation;
                 const { frameDimensions } = animation;
+                if (this.spriteSheetMap[animation.spriteSheetKey] && this.spriteSheetMap[animation.spriteSheetKey] !== animation.spriteSheetSrc) {
+                    console.error('Attempted to load a Spritesheet with an existing key but different source:', spriteData);
+                }
+                this.spriteSheetMap[animation.spriteSheetKey] = animation.spriteSheetSrc;
                 load.spritesheet(
-                    animation.key, 
+                    animation.spriteSheetKey, 
                     animation.spriteSheetSrc,
                     { frameWidth: frameDimensions.width, frameHeight: frameDimensions.height });
             }
@@ -37,10 +42,11 @@ export default class ObstacleHelper {
 
             for (const prop in animations) {
                 const animation = animations[prop] as Animation;
-                if (!anims.exists(animation.key)) {
+                const animationKey = `${spriteKey}_${prop}`;
+                if (!anims.exists(animationKey)) {
                     anims.create({
-                        key: animation.key,
-                        frames: anims.generateFrameNumbers(animation.key, { start: 0, end: animation.frameCount - 1 }),
+                        key: animationKey,
+                        frames: anims.generateFrameNumbers(animation.spriteSheetKey, { start: 0, end: animation.frameCount - 1 }),
                         frameRate: 10,
                         repeat: animation.repeat
                     });
