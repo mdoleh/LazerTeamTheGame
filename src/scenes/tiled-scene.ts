@@ -8,7 +8,8 @@ export default class TileScene extends Phaser.Scene {
     player: Phaser.Physics.Arcade.Sprite;
     cursors: Phaser.Types.Input.Keyboard.CursorKeys;
     mapHelper: TileMapHelper = new TileMapHelper(
-        { key: 'tiles', src: 'src/assets/images/super_mario.png' }, 
+        [{ key: 'super_mario', src: 'src/assets/images/super_mario.png' }, 
+        { key: 'zelda-tiles', src: 'src/assets/images/zelda-tiles.png' }], 
         { key: 'map', src: 'src/assets/tilemaps/tutorial_map.json' });
     spriteGenerator: SpriteGenerator = new SpriteGenerator(spriteData);
 
@@ -22,7 +23,7 @@ export default class TileScene extends Phaser.Scene {
     }
 
     create() {
-        const { map, layers } = this.mapHelper.create(this.make, this.cameras.main);
+        const { map, layers } = this.mapHelper.create(this.make, this.cache, this.cameras.main);
         this.cursors = this.input.keyboard.createCursorKeys();
         this.player = PlayerHelper.create(this.physics, this.anims);
         this.physics.add.existing(this.player);
@@ -42,7 +43,7 @@ export default class TileScene extends Phaser.Scene {
         PlayerHelper.update(this.player, this.cursors);
     }
 
-    explosionCollision(player, obstacle) {
+    explosionCollision(player: Phaser.Physics.Arcade.Sprite, obstacle: Phaser.Physics.Arcade.Sprite) {
         const key = `${obstacle.name}_${AnimationType.DESTROYED}`;
         if (obstacle.scene.anims.exists(key)) {
             obstacle.anims.play(key, true);

@@ -6,39 +6,55 @@ export interface MapResult {
 }
 
 export default class TileMapHelper {
-    mapImage: SourceKeyPair;
+    mapImages: { key: SourceKeyPair[] } = {} as { key: SourceKeyPair[] };
     mapJson: SourceKeyPair;
 
-    constructor(mapImage: SourceKeyPair, mapJson: SourceKeyPair) {
-        this.mapImage = mapImage;
+    constructor(mapImages: SourceKeyPair[], mapJson: SourceKeyPair) {
+        for (const mapImage of mapImages) {
+            this.mapImages[this.getFileName(mapImage.src)] = mapImage;
+        }
         this.mapJson = mapJson;
     }
 
     preload(load: Phaser.Loader.LoaderPlugin) {
-        load.image(this.mapImage.key, this.mapImage.src);
+        for (const key in this.mapImages) {
+            const mapImage = this.mapImages[key];
+            load.image(mapImage.key, mapImage.src);
+        }
         load.tilemapTiledJSON(this.mapJson.key, this.mapJson.src);
-        // load.json()
     }
 
-    create(make: Phaser.GameObjects.GameObjectCreator, mainCamera: Phaser.Cameras.Scene2D.Camera): MapResult {
-        const imageName = this.getImageName(this.mapImage.src);
+    create(make: Phaser.GameObjects.GameObjectCreator,
+        cache: Phaser.Cache.CacheManager,
+        mainCamera: Phaser.Cameras.Scene2D.Camera): MapResult {
+        const tileSetMetdata = this.getTileSets(cache);
         // must use embedded tilesets in map JSON
+        // can be done in Tiled
         const map = make.tilemap({ key: this.mapJson.key });
-        // TODO: tileset name does not have to match image name
-        // better to pull this data from the map json
-        const tiles = map.addTilesetImage(imageName, this.mapImage.key);
+        const tileSets: Phaser.Tilemaps.Tileset[] = [];
+        for (const metadata of tileSetMetdata) {
+            const imageFileName = this.getFileName(metadata.image);
+            const mapImageData = this.mapImages[imageFileName];
+            if (!mapImageData) {
+                console.error('No matching key was found for this image:', metadata.image,
+                    '\nMake sure an image matching the filename has been loaded', this.mapImages);
+            }
+            tileSets.push(map.addTilesetImage(metadata.name, mapImageData.key));
+        }
         const layers: Phaser.Tilemaps.TilemapLayer[] = [];
         for (const layer of map.layers) {
-            layers.push(map.createLayer(layer.name, tiles, 0, 0));
+            layers.push(map.createLayer(layer.name, tileSets, 0, 0));
         }
         mainCamera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         return { layers, map };
     }
 
-    // extracts the image name without the path & extension
-    private getImageName(imageSrc: string) {
-        const slashSplit = imageSrc.split('/');
-        const dotSplit = slashSplit[slashSplit.length - 1].split('.');
-        return dotSplit.slice(0, dotSplit.length - 1).join('.');
+    private getTileSets(cache: Phaser.Cache.CacheManager) {
+        return cache.tilemap.entries.entries.map.data.tilesets;
+    }
+
+    private getFileName(filePath: string): string {
+        const imagePathSplit = filePath.split('/');
+        return imagePathSplit[imagePathSplit.length - 1];
     }
 }
