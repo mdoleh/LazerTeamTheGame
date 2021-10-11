@@ -17,7 +17,7 @@ export default class SpriteGenerator {
                 const animation = animations[prop] as Animation;
                 const { frameDimensions } = animation;
                 if (this.spriteSheetMap[animation.spriteSheetKey] && this.spriteSheetMap[animation.spriteSheetKey] !== animation.spriteSheetSrc) {
-                    console.error('Attempted to load a Spritesheet with an existing key but different source:', spriteData);
+                    console.error('Attempted to load a Spritesheet with an existing spriteSheetKey but different spriteSheetSrc:', spriteData);
                 }
                 this.spriteSheetMap[animation.spriteSheetKey] = animation.spriteSheetSrc;
                 load.spritesheet(
