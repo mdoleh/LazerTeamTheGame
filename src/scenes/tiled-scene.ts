@@ -45,7 +45,7 @@ export default class TileScene extends Phaser.Scene {
     explosionCollision(player, obstacle) {
         const key = `${obstacle.name}_${AnimationType.DESTROYED}`;
         if (obstacle.scene.anims.exists(key)) {
-            obstacle.anims.play(`${obstacle.name}_${AnimationType.DESTROYED}`, true);
+            obstacle.anims.play(key, true);
         }
     }
 
