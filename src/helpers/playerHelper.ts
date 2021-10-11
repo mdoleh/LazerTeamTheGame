@@ -1,3 +1,5 @@
+// TODO: this should be more flexible
+// not able to configure player spritesheet and animations
 export default class PlayerHelper {
     static preload(load: Phaser.Loader.LoaderPlugin) {
         load.spritesheet('dude', 
