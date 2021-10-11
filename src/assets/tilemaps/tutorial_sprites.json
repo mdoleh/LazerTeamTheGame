@@ -8,7 +8,8 @@
                 "frameDimensions": {
                     "width": 32,
                     "height": 32
-                }
+                },
+                "repeat": 0
             },
             "static": {
                 "spriteSheetSrc": "src/assets/images/simple-animation.png",
@@ -17,7 +18,8 @@
                 "frameDimensions": { 
                     "width": 32,
                     "height": 48
-                }
+                },
+                "repeat": -1
             }
         },
         "spriteKey": "enemy",

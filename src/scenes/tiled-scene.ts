@@ -3,6 +3,7 @@ import PlayerHelper from '../helpers/playerHelper';
 import AnimatedSpriteHelper from '../helpers/sprites/animatedSpriteHelper';
 import TileMapHelper from '../helpers/tiledMapHelper';
 import spriteData from '../assets/tilemaps/tutorial_sprites.json'
+import { AnimationType } from '../interfaces/animation';
 
 export default class TileScene extends Phaser.Scene {
     player: Phaser.Physics.Arcade.Sprite;
@@ -11,7 +12,8 @@ export default class TileScene extends Phaser.Scene {
         key: 'enemy',
         spriteSheetSrc: 'src/assets/images/simple-animation.png',
         frameDimensions: { width: 32, height: 48 },
-        frameCount: 4 },
+        frameCount: 4,
+        repeat: -1 },
         { x: 50, y: 50 });
     mapHelper: TileMapHelper = new TileMapHelper(
         { key: 'tiles', src: 'src/assets/images/super_mario.png' }, 
@@ -42,6 +44,7 @@ export default class TileScene extends Phaser.Scene {
         const obstacles = this.obstacleHelper.create(this.physics, this.anims);
         for (const obstacle of obstacles) {
             this.physics.add.collider(this.player, obstacle, this.explosionCollision)
+            obstacle.anims.play(`${obstacle.name}_${AnimationType.STATIC}`, true);
         }
 
         this.physics.add.collider(this.player, enemy);
@@ -52,7 +55,7 @@ export default class TileScene extends Phaser.Scene {
     }
 
     explosionCollision(player, obstacle) {
-        obstacle.anims.play(`${obstacle.name}_destroyed`, true);
+        obstacle.anims.play(`${obstacle.name}_${AnimationType.DESTROYED}`, true);
     }
 
     destructibleCollision(player, block) {

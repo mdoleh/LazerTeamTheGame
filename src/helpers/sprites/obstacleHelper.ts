@@ -42,7 +42,7 @@ export default class ObstacleHelper {
                         key: animation.key,
                         frames: anims.generateFrameNumbers(animation.key, { start: 0, end: animation.frameCount - 1 }),
                         frameRate: 10,
-                        repeat: 0
+                        repeat: animation.repeat
                     });
                 }
             }
