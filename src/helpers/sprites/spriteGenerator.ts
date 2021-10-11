@@ -47,7 +47,7 @@ export default class SpriteGenerator {
                     anims.create({
                         key: animationKey,
                         frames: anims.generateFrameNumbers(animation.spriteSheetKey, { start: 0, end: animation.frameCount - 1 }),
-                        frameRate: 10,
+                        frameRate: animation.frameRate,
                         repeat: animation.repeat
                     });
                 }

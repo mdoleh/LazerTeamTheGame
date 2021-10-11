@@ -3,6 +3,7 @@ export interface Animation {
     spriteSheetSrc: string,
     spriteSheetKey: string,
     frameCount: number,
+    frameRate: number,
     repeat: number
 }
 
