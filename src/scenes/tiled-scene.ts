@@ -34,7 +34,7 @@ export default class TileScene extends Phaser.Scene {
         }
         const obstacles = this.spriteGenerator.create(this.physics, this.anims);
         for (const obstacle of obstacles) {
-            this.physics.add.collider(this.player, obstacle, this.explosionCollision)
+            this.physics.add.collider(this.player, obstacle, this.animatedDestruction)
             obstacle.anims.play(`${obstacle.name}_${AnimationType.STATIC}`, true);
         }
     }
@@ -43,10 +43,14 @@ export default class TileScene extends Phaser.Scene {
         PlayerHelper.update(this.player, this.cursors);
     }
 
-    explosionCollision(player: Phaser.Physics.Arcade.Sprite, obstacle: Phaser.Physics.Arcade.Sprite) {
+    animatedDestruction(player: Phaser.Physics.Arcade.Sprite, obstacle: Phaser.Physics.Arcade.Sprite) {
         const key = `${obstacle.name}_${AnimationType.DESTROYED}`;
         if (obstacle.scene.anims.exists(key)) {
             obstacle.anims.play(key, true);
+            obstacle.on('animationcomplete', () => {
+                obstacle.setVisible(false);
+                obstacle.destroy();
+            })
         }
     }
 
