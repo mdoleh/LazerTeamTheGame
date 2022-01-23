@@ -1,0 +1,39 @@
+[
+    {
+        "animations": {
+            "components": [
+                {
+                    "key": "left",
+                    "startFrame": 0,
+                    "endFrame": 3,
+                    "frameRate": 10,
+                    "repeat": -1
+                },
+                {
+                    "key": "right",
+                    "startFrame": 5,
+                    "endFrame": 8,
+                    "frameRate": 10,
+                    "repeat": -1
+                },
+                {
+                    "key": "turn",
+                    "startFrame": 4,
+                    "endFrame": 4,
+                    "frameRate": 20
+                }
+            ],
+            "spriteSheetSrc": "src/assets/images/dude.png",
+            "spriteSheetKey": "dude",
+            "frameDimensions": {
+                "width": 32,
+                "height": 48
+            }
+        },
+        "spriteKey": "dude",
+        "position": {
+            "x": 0,
+            "y": 0
+        }
+    }
+]

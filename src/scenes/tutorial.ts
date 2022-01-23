@@ -1,4 +1,6 @@
-import PlayerHelper from '../helpers/playerHelper';
+import PlayerGenerator from '../helpers/sprites/playerGenerator';
+import playerData from '../assets/tilemaps/players.json';
+import { PlayerSpriteData } from '../interfaces/spriteData';
 
 export default class Tutorial extends Phaser.Scene {
     platforms: Phaser.Physics.Arcade.StaticGroup;
@@ -8,9 +10,14 @@ export default class Tutorial extends Phaser.Scene {
     bombs: Phaser.Physics.Arcade.Group;
     scoreText: Phaser.GameObjects.Text;
     score: number = 0;
+    playerGenerator: PlayerGenerator = new PlayerGenerator(playerData[0] as PlayerSpriteData)
 
     constructor() {
         super({key: 'Tutorial'});
+    }
+
+    preload() {
+
     }
 
     create() {
@@ -26,7 +33,7 @@ export default class Tutorial extends Phaser.Scene {
         this.platforms.create(50, 250, 'ground');
         this.platforms.create(750, 220, 'ground');
 
-        this.player = PlayerHelper.create(this.physics, this.anims);
+        this.player = this.playerGenerator.create(this.physics, this.anims);
       
         this.physics.add.collider(this.player, this.platforms);
         this.cursors = this.input.keyboard.createCursorKeys();
@@ -57,7 +64,7 @@ export default class Tutorial extends Phaser.Scene {
     }
 
     update() {
-        PlayerHelper.update(this.player, this.cursors);
+        this.playerGenerator.update(this.player, this.cursors);
     }
 
     collectStar(player: Phaser.Physics.Arcade.Sprite, star: Phaser.Physics.Arcade.Sprite) {
