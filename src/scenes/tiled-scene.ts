@@ -59,6 +59,8 @@ export default class TileScene extends Phaser.Scene {
                 obstacle.setVisible(false);
                 obstacle.destroy();
             })
+        } else {
+            console.error('No matching animation was found for key: ', key);
         }
     }
 
