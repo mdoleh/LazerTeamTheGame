@@ -1,6 +1,6 @@
-import SpriteGenerator from '../helpers/sprites/spriteGenerator';
-import PlayerGenerator from '../helpers/sprites/playerGenerator';
-import TileMapHelper from '../helpers/tiledMapHelper';
+import SpriteGenerator from '../generators/sprites/spriteGenerator';
+import PlayerGenerator from '../generators/sprites/playerGenerator';
+import TileMapGenerator from '../generators/tileMapGenerator';
 import spriteData from '../assets/tilemaps/tutorial_sprites.json'
 import playerData from '../assets/tilemaps/players.json';
 import { AnimationType } from '../interfaces/animation';
@@ -9,7 +9,7 @@ import { PlayerSpriteData } from '../interfaces/spriteData';
 export default class TileScene extends Phaser.Scene {
     players: Phaser.Physics.Arcade.Sprite[];
     cursors: Phaser.Types.Input.Keyboard.CursorKeys;
-    mapHelper: TileMapHelper = new TileMapHelper(
+    mapHelper: TileMapGenerator = new TileMapGenerator(
         [{ key: 'super_mario', src: 'src/assets/images/super_mario.png' }, 
         { key: 'zelda-tiles', src: 'src/assets/images/zelda-tiles.png' }], 
         { key: 'map', src: 'src/assets/tilemaps/tutorial_map.json' });

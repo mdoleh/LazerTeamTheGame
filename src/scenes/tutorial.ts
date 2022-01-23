@@ -1,4 +1,4 @@
-import PlayerGenerator from '../helpers/sprites/playerGenerator';
+import PlayerGenerator from '../generators/sprites/playerGenerator';
 import playerData from '../assets/tilemaps/players.json';
 import { PlayerSpriteData } from '../interfaces/spriteData';
 

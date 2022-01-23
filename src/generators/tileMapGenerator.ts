@@ -5,7 +5,7 @@ export interface MapResult {
     layers: Phaser.Tilemaps.TilemapLayer[]
 }
 
-export default class TileMapHelper {
+export default class TileMapGenerator {
     mapImages: { key: SourceKeyPair[] } = {} as { key: SourceKeyPair[] };
     mapJson: SourceKeyPair;
 
