@@ -1,6 +1,15 @@
 import { SpriteData } from '../../interfaces/spriteData';
 import { Animation } from '../../interfaces/animation'
 
+/*
+    This can be used to generate sprites in the game that have interactions with the player.
+    Supports:
+     - Sprites that play animations on interaction with the player
+     - loading of spritesheet data & generating associated animations
+    Requirements:
+     - Sprite JSON in SpriteData format
+     - One generator for all interactive sprites 
+*/
 export default class SpriteGenerator {
     jsonSrc: SpriteData[];
     spriteSheetMap: any = {};

@@ -1,5 +1,14 @@
 import { PlayerSpriteData } from "../../interfaces/spriteData";
 
+/*
+    This can be used to generate player sprites (i.e. controlled by players).
+    Supports:
+     - event wire ups for different key presses
+     - loading of spritesheets and generating associated animations 
+    Requirements:
+     - Player JSON in the PlayerSpriteData format
+     - One generator per player
+*/
 export default class PlayerGenerator {
     playerData: PlayerSpriteData;
 

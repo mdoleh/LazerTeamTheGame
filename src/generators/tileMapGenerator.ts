@@ -5,6 +5,12 @@ export interface MapResult {
     layers: Phaser.Tilemaps.TilemapLayer[]
 }
 
+/*
+    This can be used to generate a map from a Tiled generated JSON file.
+    Requirements:
+     - embedded tilesets in map JSON (can be done in Tiled)
+     - One generator per map JSON
+*/
 export default class TileMapGenerator {
     mapImages: { key: SourceKeyPair[] } = {} as { key: SourceKeyPair[] };
     mapJson: SourceKeyPair;
