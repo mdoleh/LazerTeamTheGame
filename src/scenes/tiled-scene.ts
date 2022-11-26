@@ -60,7 +60,7 @@ export default class TileScene extends Phaser.Scene {
                 obstacle.destroy();
             })
         } else {
-            console.error('No matching animation was found for key: ', key);
+            console.warn('No matching animation was found for key: ', key);
         }
     }
 
